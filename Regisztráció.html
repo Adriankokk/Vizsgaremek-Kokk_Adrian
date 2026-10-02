@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <style>
+        /* Minden elem méretezésébe beleszámít a padding és a border is. */
+        * { box-sizing: border box; }
+
+        /* Az egész oldal alapvető megjelenése. */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px 15px;
+            background: #f3f4f6
+        }
+
+        /* A regisztrációs űrlapot tartalmazó központi doboz. */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,.12);
+        }
+
+        /* A főcím középre igazítása. */
+        h1 { margin-top: 0; text-align: center; }
+
+        /* A főcím alatti bevezető szöveg. */
+        .intro { text-align: center; margin-bottom: 25px; }
+
+        /* Az űrlap egyes adatcsoportjainak formázása. */
+        fieldset {
+            margin-bottom: 20px;
+            padding: 18px;
+            border: 1px solid #bbb;
+            border-radius: 7px;
+        }
+
+        /* A fieldset címe. */
+       legend { font-weight: bold; padding: 0 8px; }
+
+        /* A beviteli mezők feliratai. */
+        label { display: block; margin: 12px 0 5px; }
+
+        /* A szöveges mezők és a legördülő lista közös formázása. */
+        input[type="text"], input[type="email"], input[type="password"],
+        input[type="date"], input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* A rádiógombok egymás mellé kerülnek. */
+        .choice label { display: inline-block; margin: 8px 15px 8px 0; }
+
+        /* A jelölőnégyzetek külön sorban jelennek meg. */
+        .check label { display: block; margin: 10px 0; }
+
+        /* A két gomb egymás mellé kerül. */
+        .buttons { display: flex; gap: 10px; margin-top: 20px; }
+
+        /* A gombok alapformázása. */
+        button {
+            flex: 1;
+            padding: 11px;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            background: #222;
+            color: white;
+            transition: .2s;
+        }
+
+        /* Egér fölé vitelekor megváltozik a gomb színe. */
+        button:hover { background: #555; }
+
+        /* A törlés gomb eltérő színt kap. */
+        button[type="reset"] { background: #777; }
+        button[type="reset"]:hover { background: #999; }
+
+        /* A kötelező mezőket jelző csillag színe. */
+        .required { color: #b00020; }
+
+        /* Mobiltelefonon a gombok és választási lehetőségek egymás alá kerülnek. */
+        @media (max-width: 500px) {
+            .container { padding: 18px; }
+            .buttons { flex-direction: column; }
+            .choice label { display: block; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Az oldal fő tartalma. -->
+    <main class="container">
+
+        <!-- Első szintű címsor. -->
+        <h1>Regisztráció</h1>
+
+        <!-- Rövid bevezető szöveg. -->
+        <p class="intro">Hozd létre TechShop fiókodat!</p>
+
+        <!-- A regisztrációs űrlap kezdete. -->
+        <form action="#" method="post">
+
+            <!-- A személyes adatok csoportja. -->
+            <fieldset>
+                <legend>Személyes adatok</legend>
+
+                <!-- Kötelező szöveges mező a teljes névhez. -->
+                <label for="nev">Teljes név <span class="required">*</span></label>
+                <input type="text" id="nev" name="nev" required>
+
+                <!-- Az email típus segíti az e-mail cím ellenőrzését. -->
+                <label for="email">E-mail cím <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Jelszómező, legalább 8 karakterrel. -->
+                <label for="jelszo">Jelszó <span class="required">*</span></label>
+                <input type="password" id="jelszo" name="jelszo" minlength="8" required>
+
+                <!-- A jelszó ismételt megadása. -->
+                <label for="jelszo2">Jelszó újra <span class="required">*</span></label>
+                <input type="password" id="jelszo2" name="jelszo2" minlength="8" required>
+
+         <!-- Dátumválasztó mező. -->
+<label for="szuletes">Születési dátum</label>
+<input type="date" id="szuletes" name="szuletes">
+
+<!-- Telefonszám megadására szolgáló mező. -->
+<label for="telefon">Telefonszám</label>
+<input type="tel" id="telefon" name="telefon" placeholder="+36 30 123 4567">
+
+<!-- Rádiógombok: azonos name miatt egyszerre csak egy választható. -->
+<p>Nem:</p>
+<div class="choice">
+    <label><input type="radio" name="nem" value="ferfi"> Férfi</label>
+    <label><input type="radio" name="nem" value="no"> Nő</label>
+    <label><input type="radio" name="nem" value="nem_adja_meg"> Nem szeretném megadni</label>
+</div>
+
+<!-- Legördülő lista a lakóhely kiválasztásához. -->
+<label for="lakhely">Lakóhely</label>
+<select id="lakhely" name="lakhely">
+    <option value="">-- Válassz --</option>
+    <option>Budapest</option>
+    <option>Debrecen</option>
+    <option>Szeged</option>
+    <option>Miskolc</option>
+    <option>Pécs</option>
+    <option>Győr</option>
+    <option>Egyéb</option>
+</select>
+</fieldset>
+
+<!-- A szállítási adatok csoportja. -->
+<fieldset>
+    <legend>Szállítási adatok</legend>
+
+    <label for="iranyitoszam">Irányítószám</label>
+    <input type="text" id="iranyitoszam" name="iranyitoszam">
+
+    <label for="telepules">Település</label>
+    <input type="text" id="telepules" name="telepules">
+
+    <label for="utca">Utca</label>
+    <input type="text" id="utca" name="utca">
+
+    <label for="hazszam">Házszám</label>
+<input type="text" id="hazszam" name="hazszam">
+</fieldset>
+
+<!-- Jelölőnégyzetek. -->
+<fieldset class="check">
+    <legend>Beállítások</legend>
+
+    <!-- A hírlevél nem kötelező. -->
+    <label><input type="checkbox" name="hirlevel"> Feliratkozom a hírlevélre</label>
+
+    <!-- A required miatt az ÁSZF elfogadása kötelező. -->
+    <label><input type="checkbox" name="aszf" required>
+        Elfogadom az ÁSZF-et <span class="required">*</span>
+    </label>
+</fieldset>
+
+<!-- Az űrlap elküldésére és törlésére szolgáló gombok. -->
+<div class="buttons">
+    <button type="submit">Regisztráció</button>
+    <button type="reset">Űrlap törlése</button>
+</div>
+</form>
+</main>
+</body>
+</html>
+
