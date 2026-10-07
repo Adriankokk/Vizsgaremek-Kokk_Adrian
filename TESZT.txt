@@ -1,0 +1,40 @@
+                     TESZT
+
+C
+2. D,C
+3. C
+4.
+félkövér betű = text-weight: bold;
+dölt betű = font-style: italic;
+betűtipus = font-family
+kiskapitális betű = font-variant: small-caps;
+5. D
+6. A, E
+7. D
+8. B
+9. C
+
+10.
+redundanciának
+normalizálásnak
+11. C
+12. B, C
+13. 
+H
+I
+I
+H
+
+14. D
+15. D
+16. 
+példányosítás
+konstruktor
+17. B
+18. B
+19.
+1: Komponens
+2: Felhasználói
+3: Rendszer
+4: Intergrációs
+20. C
