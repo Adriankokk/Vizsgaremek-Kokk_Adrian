@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Vonat menetidejének kiszámítása</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: ##ADD8E6;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .doboz {
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: #f8fafc;
+            border: 1px solid #9aabc0;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 25px;
+            color: #24364b;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        select {
+            border: 1px solid #9aabc0;
+            background-color: white;
+        }
+
+        button {
+            margin-top: 22px;
+            color: white;
+            background-color: #285b91;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d426b;
+        }
+
+        #eredmeny {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #9aabc0;
+            border-radius: 5px;
+            background-color: #e5eef8;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+<main class="doboz">
+        <h1>Vonat menetidő-számító</h1>
+        <p>Budapest–Vác vasútvonal</p>
+
+        <label for="indulas">Indulási állomás:</label>
+        <select id="indulas">
+            <option value="0">Budapest-Nyugati</option>
+            <option value="12">Rákospalota-Újpest</option>
+            <option value="20">Dunakeszi</option>
+            <option value="28">Göd</option>
+            <option value="38">Vác-Alsóváros</option>
+            <option value="42">Vác</option>
+        </select>
+
+        <label for="erkezes">Érkezési állomás:</label>
+        <select id="erkezes">
+            <option value="0">Budapest-Nyugati</option>
+            <option value="12">Rákospalota-Újpest</option>
+            <option value="20">Dunakeszi</option>
+            <option value="28">Göd</option>
+            <option value="38">Vác-Alsóváros</option>
+            <option value="42" selected>Vác</option>
+        </select>
+
+        <button type="button" onclick="menetidoSzamitasa()">Menetidő számítása</button>
+
+        <div id="eredmeny" aria-live="polite">A vonat menetideje: 42 perc</div>
+    </main>
+
+    <script>
+        function menetidoSzamitasa() {
+            const indulasElem = document.getElementById("indulas");
+            const erkezesElem = document.getElementById("erkezes");
+            const eredmeny = document.getElementById("eredmeny");
+
+            const indulas = Number(indulasElem.value);
+            const erkezes = Number(erkezesElem.value);
+
+            if (indulas === erkezes) {
+                eredmeny.textContent = "Figyelem! Az indulási és érkezési állomás nem lehet ugyanaz.";
+                return;
+            }
+
+            const menetido = Math.abs(erkezes - indulas);
+            const indulasNeve = indulasElem.options[indulasElem.selectedIndex].text;
+            const erkezesNeve = erkezesElem.options[erkezesElem.selectedIndex].text;
+            const megallokSzama = Math.max(
+                0,
+                Math.abs(erkezesElem.selectedIndex - indulasElem.selectedIndex) - 1
+            );
+
+            let szoveg = "Indulás: " + indulasNeve + "<br>" +
+                         "Érkezés: " + erkezesNeve + "<br>" +
+                         "A vonat menetideje: " + menetido + " perc<br>" +
+                         "Köztes megállók száma: " + megallokSzama;
+
+            if (menetido > 30) {
+                szoveg += "<br><strong>Hosszabb utazás</strong>";
+            }
+
+            eredmeny.innerHTML = szoveg;
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
