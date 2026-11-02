@@ -1,0 +1,27 @@
+WEBPROGRAMOZÁS – 20 FELADAT
+Név: Kokk Adrián
+Osztály: 13.IM
+Eredmény: 16/20 (80%)
+Kitöltve: 18/20
+Dátum: 2026. 11. 02. 9:03:45
+
+1. HELYES | Válasz: 0
+2. HIBÁS | Válasz: 3
+3. HELYES | Válasz: img
+4. HELYES | Válasz: 1
+5. HELYES | Válasz: select
+6. HELYES | Válasz: 0
+7. HELYES | Válasz: value
+8. HELYES | Válasz: 2
+9. HELYES | Válasz: background-color
+10. HELYES | Válasz: 1
+11. HELYES | Válasz: text-align
+12. HELYES | Válasz: 1
+13. HELYES | Válasz: border-radius
+14. HELYES | Válasz: 0
+15. HIBÁS | Válasz: (üres)
+16. HIBÁS | Válasz: 0
+17. HELYES | Válasz: abs
+18. HELYES | Válasz: 1
+19. HIBÁS | Válasz: (üres)
+20. HELYES | Válasz: 1
