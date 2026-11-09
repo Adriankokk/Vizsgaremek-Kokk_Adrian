@@ -1,5 +1,0 @@
-C:\Users\Kokk Adrián\source\repos\orszagok2.0\orszagok2.0\obj\Debug\orszagok2.0.csproj.AssemblyReference.cache
-C:\Users\Kokk Adrián\source\repos\orszagok2.0\orszagok2.0\obj\Debug\OrszagokNyilvantartasa.Form1.resources
-C:\Users\Kokk Adrián\source\repos\orszagok2.0\orszagok2.0\obj\Debug\orszagok2._0.Properties.Resources.resources
-C:\Users\Kokk Adrián\source\repos\orszagok2.0\orszagok2.0\obj\Debug\orszagok2.0.csproj.GenerateResource.cache
-C:\Users\Kokk Adrián\source\repos\orszagok2.0\orszagok2.0\obj\Debug\orszagok2.0.csproj.CoreCompileInputs.cache
